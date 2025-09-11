@@ -90,7 +90,7 @@ cp .zshrc $HOME/.zshrc
 cp .p10k.zsh $HOME/.p10k.zsh
 
 # Copy fzf config
-mkdir -p .fzf/shell
-fzf --zsh > .fzf/shell/key-bindings.zsh
+mkdir -p $HOME/.fzf/shell
+fzf --zsh > $HOME/.fzf/shell/key-bindings.zsh
 cp .fzf.zsh $HOME/.fzf.zsh
 
