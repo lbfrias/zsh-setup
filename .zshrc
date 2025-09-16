@@ -121,7 +121,7 @@ source $ZSH/oh-my-zsh.sh
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 ## User Environment Variables
-export SSH_AUTH_SOCK=/home/<user>/.bitwarden-ssh-agent.sock
+export SSH_AUTH_SOCK=$HOME/.bitwarden-ssh-agent.sock
 
 ## User Aliases
 # Replace ls with eza
