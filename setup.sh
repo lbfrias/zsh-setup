@@ -90,6 +90,8 @@ echo $PWD
 
 cd zsh-setup
 
+echo $PWD
+
 # Copy zshrc
 cp .zshrc $HOME/.zshrc
 
