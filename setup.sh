@@ -88,6 +88,8 @@ git clone https://github.com/Aloxaf/fzf-tab ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/p
 
 echo $PWD
 
+cd zsh-setup
+
 # Copy zshrc
 cp .zshrc $HOME/.zshrc
 
