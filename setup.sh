@@ -86,11 +86,7 @@ git clone --depth 1 https://github.com/unixorn/fzf-zsh-plugin.git ${ZSH_CUSTOM:-
 # Install fzf-tab
 git clone https://github.com/Aloxaf/fzf-tab ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/fzf-tab
 
-echo $PWD
-ls -l
-cd zsh-setup
-ls -l
-echo $PWD
+echo "Current dir: $(pwd)"
 
 # Copy zshrc
 cp .zshrc $HOME/.zshrc
