@@ -71,6 +71,9 @@ packages=(
 )
 install_packages
 
+# Cleanup previous omz and fzf config
+rm -rf $HOME/.oh-my-zsh $HOME/.fzf
+
 # Install oh-my-zsh
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
@@ -86,7 +89,8 @@ git clone --depth 1 https://github.com/unixorn/fzf-zsh-plugin.git ${ZSH_CUSTOM:-
 # Install fzf-tab
 git clone https://github.com/Aloxaf/fzf-tab ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/fzf-tab
 
-echo "Current dir: $(pwd)"
+# Change default shell to zsh
+chsh -s /usr/bin/zsh
 
 # Copy zshrc
 cp .zshrc $HOME/.zshrc
