@@ -72,10 +72,12 @@ packages=(
 install_packages
 
 # Cleanup previous omz and fzf config
-rm -rf $HOME/.oh-my-zsh $HOME/.fzf
+rm -rf $HOME/.oh-my-zsh $HOME/.p10k.zsh $HOME/.fzf* $HOME/.zshrc
 
 # Install oh-my-zsh
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
+export RUNZSH="no"
+export OVERWRITE_CONFIRMATION="no"
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
 # Install powerlevel10k
 git clone --depth=1 https://github.com/romkatv/powerlevel10k.git "${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k"
@@ -89,20 +91,21 @@ git clone --depth 1 https://github.com/unixorn/fzf-zsh-plugin.git ${ZSH_CUSTOM:-
 # Install fzf-tab
 git clone https://github.com/Aloxaf/fzf-tab ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/fzf-tab
 
-# Change default shell to zsh
-chsh -s /usr/bin/zsh
-
-echo "Copying config files.."
+echo "Linking config files.."
 
 # Copy zshrc
-cp .zshrc $HOME/.zshrc
+# cp .zshrc $HOME/.zshrc
+rm -f $HOME/.zshrc
+ln -s $(pwd)/.zshrc $HOME/.zshrc
 
 # Copy powerlevel10k config
-cp .p10k.zsh $HOME/.p10k.zsh
+#cp .p10k.zsh $HOME/.p10k.zsh
+ln -s $(pwd)/.p10k.zsh $HOME/.p10k.zsh
 
 # Copy fzf config
-mkdir -p $HOME/.fzf/shell
-fzf --zsh > $HOME/.fzf/shell/key-bindings.zsh
-cp .fzf.zsh $HOME/.fzf.zsh
+# cp -R .fzf $HOME
+ln -s $(pwd)/.fzf $HOME/.fzf
+# cp .fzf.zsh $HOME/.fzf.zsh
+ln -s $(pwd)/.fzf.zsh $HOME/.fzf.zsh
 
 echo "Installation done!"
