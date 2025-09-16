@@ -33,7 +33,7 @@ install_packages() {
             sudo "$manager" install -y "${packages[@]}"
             ;;
         pacman)
-            sudo pacman -Sy --noconfirm "${packages[@]}"
+            sudo pacman -Sy --needed --noconfirm "${packages[@]}"
             ;;
         zypper)
             sudo zypper install -y "${packages[@]}"
