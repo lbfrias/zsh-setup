@@ -86,6 +86,9 @@ git clone --depth 1 https://github.com/unixorn/fzf-zsh-plugin.git ${ZSH_CUSTOM:-
 # Install fzf-tab
 git clone https://github.com/Aloxaf/fzf-tab ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/fzf-tab
 
+# Change directory
+cd zsh-setup
+
 # Copy zshrc
 cp .zshrc $HOME/.zshrc
 
@@ -97,3 +100,5 @@ mkdir -p $HOME/.fzf/shell
 fzf --zsh > $HOME/.fzf/shell/key-bindings.zsh
 cp .fzf.zsh $HOME/.fzf.zsh
 
+cd ..
+rm -rf zsh-setup
