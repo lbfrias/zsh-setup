@@ -2,5 +2,5 @@
 
 git clone https://github.com/lbfrias/zsh-setup.git
 cd zsh-setup
-chmod +x zsh-setup
+chmod +x setup.sh
 sudo ./setup.sh
