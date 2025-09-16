@@ -90,7 +90,7 @@ git clone --depth 1 https://github.com/unixorn/fzf-zsh-plugin.git ${ZSH_CUSTOM:-
 git clone https://github.com/Aloxaf/fzf-tab ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/fzf-tab
 
 # Change default shell to zsh
-chsh -s /usr/bin/zsh
+sudo chsh -s /usr/bin/zsh "$USER"
 
 # Copy zshrc
 cp .zshrc $HOME/.zshrc
