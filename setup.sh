@@ -67,15 +67,15 @@ packages=(
     eza
     chafa
     ripgrep
-
 )
+
 install_packages
 
 # Cleanup previous omz and fzf config
 rm -rf $HOME/.oh-my-zsh $HOME/.fzf
 
 # Install oh-my-zsh
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
 
 # Install powerlevel10k
 git clone --depth=1 https://github.com/romkatv/powerlevel10k.git "${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k"
@@ -90,7 +90,7 @@ git clone --depth 1 https://github.com/unixorn/fzf-zsh-plugin.git ${ZSH_CUSTOM:-
 git clone https://github.com/Aloxaf/fzf-tab ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/fzf-tab
 
 # Change default shell to zsh
-sudo chsh -s /usr/bin/zsh "$USER"
+chsh -s /usr/bin/zsh
 
 # Copy zshrc
 cp .zshrc $HOME/.zshrc
