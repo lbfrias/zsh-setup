@@ -92,6 +92,8 @@ git clone https://github.com/Aloxaf/fzf-tab ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/p
 # Change default shell to zsh
 chsh -s /usr/bin/zsh
 
+echo "Copying config files.."
+
 # Copy zshrc
 cp .zshrc $HOME/.zshrc
 
@@ -102,3 +104,5 @@ cp .p10k.zsh $HOME/.p10k.zsh
 mkdir -p $HOME/.fzf/shell
 fzf --zsh > $HOME/.fzf/shell/key-bindings.zsh
 cp .fzf.zsh $HOME/.fzf.zsh
+
+echo "Installation done!"
